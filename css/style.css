@@ -1,0 +1,205 @@
+@font-face {
+    font-family: "Red Hat Text Bold";
+    src: url(../assets/fonts/static/RedHatText-Bold.ttf);
+    font-style: normal;
+    font-weight: bold;
+}
+
+
+@font-face {
+    font-family: "Red Hat Text Semi Bold";
+    src: url(../assets/fonts/static/RedHatText-SemiBold.ttf);
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Red Hat Text Regular";
+    src: url(../assets/fonts/static/RedHatText-Regular.ttf);
+    font-style: normal;
+    font-weight: 500;
+}
+
+
+/* Format 1rem = 10px */
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    padding: 0px;
+    margin: 0px;
+}
+
+*,*::before,*::after{padding: 0px;margin: 0px;box-sizing: border-box;}
+
+
+img {width: 100%;max-width: 100%;}
+
+:root {
+
+    /* Colors */
+    --red: #C73B0F;
+    --rose-900: #260F08;
+    --rose-500: #87635A;
+    --rose-400: #AD8A85;
+    --rose-300: #CAAFA7;
+    --rose-100: #F5EEEC;
+    --rose-50: #FCF8F6;
+    --green: #1EA575;
+    --black: #000000;
+    --white: #FFFFFF;
+
+    /* Spacings */
+    --spacing-1100: 8.8rem;
+    --spacing-500: 4rem;
+    --spacing-400: 3.2rem;
+    --spacing-300: 2.4rem;
+    --spacing-200: 1.6rem;
+    --spacing-150: 1.2rem;
+    --spacing-100: 0.8rem;
+    --spacing-50: 0.4rem;
+
+    /* Typography */
+    --text-preset-bold: "Red Hat Text Bold";
+    --text-preset-semi-bold: "Red Hat Text Semi Bold";
+    --text-preset-regular: "Red Hat Text Regular";
+}
+
+
+
+
+/* Global */
+
+.text-preset-1 {
+    font-size: 5.6rem;
+    line-height: 120%;
+    letter-spacing: 0px;
+    font-family: var(--text-preset-bold);
+}
+
+.text-preset-2{
+    font-size: 2.4rem;
+    line-height: 125%;
+    letter-spacing: 0px;
+    font-family: var(--text-preset-bold);
+}
+
+.text-preset-3{
+    font-size: 1.6rem;
+    line-height: 150%;
+    letter-spacing: 0px;
+    font-family: var(--text-preset-semi-bold);
+
+}
+
+.text-preset-4{
+    font-size: 1.4rem;
+    line-height: 150%;
+    letter-spacing: 0px;
+    font-family: var(--text-preset-regular);
+}
+
+.text-preset-4-semi{
+    font-size: 1.4rem;
+    line-height: 150%;
+    letter-spacing: 0px;
+    font-family: var(--text-preset-semi-bold);
+}
+
+
+.container {
+    width: 100%;
+    max-width: 100%;
+    padding: var(--spacing-300);
+    margin:0 auto;
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
