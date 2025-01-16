@@ -9,6 +9,46 @@
 </head>
 
 <body>
-
+    <div class="container">
+        <header>
+            <h1 class="text-preset-1">Desserts</h1>
+        </header>
+        <main class="products">
+            <section class="product">
+                <article>
+                    <div class="product__header df">
+                        <picture>
+                            <source media="(min-width: 1023px)" srcset="assets/images/image-waffle-desktop.jpg">
+                            <source media="(min-width: 767px)" srcset="assets/images/image-waffle-tablet.jpg">
+                            <img class="product__image" src="assets/images/image-waffle-mobile.jpg"
+                                alt="Waffle with Berries" loading="lazy">
+                        </picture>
+                        <div class="product__btn df">
+                            <img class="product__icon" src="assets/images/icon-add-to-cart.svg" alt="Icon add to Cart">
+                            <button class="product__decrement product__incrementdecrement not-visible"
+                                aria-label="Decrement">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="2" fill="none"
+                                    viewBox="0 0 10 2">
+                                    <path fill="#fff" d="M0 .375h10v1.25H0V.375Z" />
+                                </svg>
+                            </button>
+                            <a class="text-preset-4-bold product_add" href="">Add to Cart</a>
+                            <button class="product__increment product__incrementdecrement not-visible"
+                                aria-label="Increment">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="none" viewBox="0 0 10 10"><path fill="#fff" d="M10 4.375H5.625V0h-1.25v4.375H0v1.25h4.375V10h1.25V5.625H10v-1.25Z"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product__body">
+                        <p class="product_category text-preset-4">Waffle</p>
+                        <h2 class="product_name text-preset-3">Waffle with Berries</h2>
+                        <span class="product_price text-preset-3">$6.50</span>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
+    <script type="module" src="js/index.js"></script>
 </body>
+
 </html>
