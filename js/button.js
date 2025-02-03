@@ -4,7 +4,8 @@ export class Button {
 
     constructor(buttonReference) {
         this.button = document.querySelector(buttonReference);
-        this.buttonValue = this.button.querySelector("a");
+        this.buttonParent = this.button.parentElement;
+        this.buttonValue = this.button.querySelector(".product_add");
         this.buttonIncrement = this.button.querySelector(".product__increment");
         this.buttonDecrement = this.button.querySelector(".product__decrement");
         this.status = true;
@@ -43,6 +44,7 @@ export class Button {
         this.buttonIncrement.classList.add("not-visible");
         this.buttonDecrement.classList.add("not-visible");
         this.buttonValue.innerHTML = "Add to Cart";
+        this.buttonParent.querySelector("picture img").classList.remove("product__picture-selected");
     }
 
 
@@ -51,6 +53,8 @@ export class Button {
         this.buttonDecrement.classList.remove("not-visible");
         this.buttonIncrement.addEventListener("click", () => { this.incrementButton() });
         this.buttonDecrement.addEventListener("click", () => { this.decrementButton() });
+        this.buttonParent.querySelector("picture img").classList.add("product__picture-selected");
+
     }
 
 
