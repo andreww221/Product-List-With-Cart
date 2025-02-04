@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product List With Cart</title>
+    <meta name="description" content = "Product List With Cart">
+    <meta name="keywords" content = "Product,List,With,Cart">
+    <meta name="author" content = "Andrew">
+    <link rel="icon" href="assets/images/favicon-32x32.png">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -24,7 +28,7 @@
                                 <img class="product__image" src="assets/images/image-waffle-mobile.jpg"
                                     alt="Waffle with Berries" loading="lazy">
                             </picture>
-                            <div class="product__btn df" data-id="1">
+                            <div class="product__btn df" data-id="0">
                                 <img class="product__icon" src="assets/images/icon-add-to-cart.svg"
                                     alt="Icon add to Cart">
                                 <button class="product__decrement product__incrementdecrement not-visible"
@@ -62,7 +66,7 @@
                                 <img class="product__image" src="assets/images/image-creme-brulee-mobile.jpg"
                                     alt="Vanilla Bean Crème Brûlée" loading="lazy">
                             </picture>
-                            <div class="product__btn df" data-id="2">
+                            <div class="product__btn df" data-id="1">
                                 <img class="product__icon" src="assets/images/icon-add-to-cart.svg"
                                     alt="Icon add to Cart">
                                 <button class="product__decrement product__incrementdecrement not-visible"
@@ -99,7 +103,7 @@
                                 <img class="product__image" src="assets/images/image-macaron-mobile.jpg"
                                     alt="Macaron Mix of Five" loading="lazy">
                             </picture>
-                            <div class="product__btn df" data-id="3">
+                            <div class="product__btn df" data-id="2">
                                 <img class="product__icon" src="assets/images/icon-add-to-cart.svg"
                                     alt="Icon add to Cart">
                                 <button class="product__decrement product__incrementdecrement not-visible"
@@ -136,7 +140,7 @@
                                 <img class="product__image" src="assets/images/image-tiramisu-mobile.jpg"
                                     alt="Classic Tiramisu" loading="lazy">
                             </picture>
-                            <div class="product__btn df" data-id="4">
+                            <div class="product__btn df" data-id="3">
                                 <img class="product__icon" src="assets/images/icon-add-to-cart.svg"
                                     alt="Icon add to Cart">
                                 <button class="product__decrement product__incrementdecrement not-visible"
@@ -173,7 +177,7 @@
                                 <img class="product__image" src="assets/images/image-baklava-mobile.jpg"
                                     alt="Pistachio Baklava" loading="lazy">
                             </picture>
-                            <div class="product__btn df" data-id="5">
+                            <div class="product__btn df" data-id="4">
                                 <img class="product__icon" src="assets/images/icon-add-to-cart.svg"
                                     alt="Icon add to Cart">
                                 <button class="product__decrement product__incrementdecrement not-visible"
@@ -210,7 +214,7 @@
                                 <img class="product__image" src="assets/images/image-meringue-mobile.jpg"
                                     alt="Lemon Meringue Pie" loading="lazy">
                             </picture>
-                            <div class="product__btn df" data-id="6">
+                            <div class="product__btn df" data-id="5">
                                 <img class="product__icon" src="assets/images/icon-add-to-cart.svg"
                                     alt="Icon add to Cart">
                                 <button class="product__decrement product__incrementdecrement not-visible"
@@ -247,7 +251,7 @@
                                 <img class="product__image" src="assets/images/image-cake-mobile.jpg"
                                     alt="Red Velvet Cake" loading="lazy">
                             </picture>
-                            <div class="product__btn df" data-id="7">
+                            <div class="product__btn df" data-id="6">
                                 <img class="product__icon" src="assets/images/icon-add-to-cart.svg"
                                     alt="Icon add to Cart">
                                 <button class="product__decrement product__incrementdecrement not-visible"
@@ -284,7 +288,7 @@
                                 <img class="product__image" src="assets/images/image-brownie-mobile.jpg"
                                     alt="Salted Caramel Brownie" loading="lazy">
                             </picture>
-                            <div class="product__btn df" data-id="8">
+                            <div class="product__btn df" data-id="7">
                                 <img class="product__icon" src="assets/images/icon-add-to-cart.svg"
                                     alt="Icon add to Cart">
                                 <button class="product__decrement product__incrementdecrement not-visible"
@@ -322,7 +326,7 @@
                                 <img class="product__image" src="assets/images/image-panna-cotta-mobile.jpg"
                                     alt="Vanilla Panna Cotta" loading="lazy">
                             </picture>
-                            <div class="product__btn df" data-id="9">
+                            <div class="product__btn df" data-id="8">
                                 <img class="product__icon" src="assets/images/icon-add-to-cart.svg"
                                     alt="Icon add to Cart">
                                 <button class="product__decrement product__incrementdecrement not-visible"
@@ -354,7 +358,7 @@
             <footer>
                 <section>
                     <div class="cart">
-                        <h3 class="cart__title text-preset-2">Your Cart (0)</h3>
+                        <h3 class="cart__title text-preset-2">Your Cart (<span>0</span>)</h3>
                         <div class="cart_content">
                             <div class="cart__content--empty">
                                 <img src="assets/images/illustration-empty-cart.svg" alt="Empty Cart">
@@ -362,25 +366,60 @@
                                     here
                                 </h3>
                             </div>
-                        </div>
-                        <!-- <ul class="cart__items">
-                            <li class="cart__item">
-                                <h4 class="cart__item-title text-preset-4-bold">Classic Tiramisu</h4>
-                                <ul class="cart__items-details">
-                                    <li class="cart__items-details-amount text-preset-4-bold">1x</li>
-                                    <li class="cart__items-details-price text-preset-4">@ $5.50</li>
-                                    <li class="cart__items-details-total text-preset-4-bold">$5.50</li>
+                            <div class="cart_full not-visible">
+                                <ul class="cart__items">
                                 </ul>
-                                <span class="cart__item-remove">
-                                    <img src="assets/images/icon-remove-item.svg" alt="Icon remove producto">
-                                </span>
-                            </li>
-                        </ul> -->
+                                <div class="cart__total">
+                                    <div class="cart__total--content">
+                                        <h3 class="cart__total--title text-preset-4">Order Total</h3>
+                                        <span class="cart__total--total text-preset-2">0</span>
+                                    </div>
+                                    <div class="cart__total-carbon">
+                                        <img class="cart__total-carbon-icon" src="assets/images/icon-carbon-neutral.svg"
+                                            alt="Icon carbon neutral">
+                                        <p class="cart__total-carbon-title text-preset-4">This is a<span
+                                                class="text-preset-4-bold"> carbon-neutral </span>delivery</p>
+                                    </div>
+                                    <div class="cart__total-confirm">
+                                        <button class="text-preset-3 cart__total-confirm-button">Confirm Order</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
             </footer>
         </main>
     </div>
+    <section class="modal not-visible">
+        <div class="modal_empty">
+        </div>
+        <div class="modal__content">
+            <header class="modal__content-header">
+                <div class="modal__content-header-icon">
+                    <img src="assets/images/icon-order-confirmed.svg" alt="Icon order confirmed">
+                </div>
+                <h2 class="text-preset-1 modal__content-header-title">Order <br> Confirmed</h2>
+                <p class="text-preset-4 modal__content-header-description">We hope you enjoy your food!</p>
+            </header>
+            <section class="modal__content-items">
+                <ul class="modal__content-items-s">
+                </ul>
+                <section class="modal__content-total">
+                    <h3 class="modal__content-title text-preset-4">Order Total</h3>
+                    <span class="modal__content-total-price text-preset-2">$46.50</span>
+                </section>
+            </section>
+            <section class="modal_content-button">
+                <div class="cart__total-confirm">
+                    <button class="text-preset-3 cart__total-confirm-button">Start New Order</button>
+                </div>
+            </section>
+        </div>
+    </section>
+    <footer class="footer">
+        <p class="footer_text text-preset-4">Created by Andrew :)</p>
+    </footer>
     <script type="module" src="js/index.js"></script>
 </body>
 

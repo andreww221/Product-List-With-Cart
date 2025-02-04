@@ -2,8 +2,10 @@
 
 export class Button {
 
-    constructor(buttonReference) {
+    constructor(buttonReference, cart) {
+        this.cart = cart;
         this.button = document.querySelector(buttonReference);
+        this.idItemCart = this.button.dataset.id;
         this.buttonParent = this.button.parentElement;
         this.buttonValue = this.button.querySelector(".product_add");
         this.buttonIncrement = this.button.querySelector(".product__increment");
@@ -33,7 +35,8 @@ export class Button {
             this.button.classList.add("product__btn--update-1");
             this.buttonValue.innerHTML = 1;
             this.showButtonIncrementDecrement();
-        }else{
+            this.cart.addProductToCart(this.buttonParent.parentElement);
+        } else {
             this.status = true;
         }
     }
@@ -61,19 +64,25 @@ export class Button {
     incrementButton() {
         let value = Number(this.buttonValue.innerHTML);
         this.buttonValue.innerHTML = value + 1;
+        this.cart.updateCartItem(this.buttonParent.parentElement, this.idItemCart);
     }
 
 
     decrementButton() {
         let value = Number(this.buttonValue.innerHTML);
-        if (value == 0) {
+        console.log("valor del decremento" + value);
+        if (value == 1) {
             this.undoButtonOneUpdate();
             this.status = false;
+            this.cart.deleteCartElement(this.idItemCart);
+            this.cart.hiddeCartItem();
         } else {
-            this.buttonValue.innerHTML = value - 1;
+            if (value) {
+                this.buttonValue.innerHTML = value - 1;
+                this.cart.updateCartItem(this.buttonParent.parentElement, this.idItemCart);
+            }
         }
     }
-
 
 }
 
