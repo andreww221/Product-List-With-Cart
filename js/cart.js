@@ -43,7 +43,7 @@ export class Cart {
                             </li>`;
         let elementCart = document.createElement("li");
         elementCart.innerHTML = elementCartText;
-        elementCart.querySelector(".cart__item-remove").addEventListener("click", () => { this.deleteCartElement(product.id); });
+        elementCart.querySelector(".cart__item-remove").addEventListener("click", () => { this.deleteCartElement(product.id, true); });
         this.cartFullItems.appendChild(elementCart);
         this.updateNumberProductsCart();
         this.updateTotalProductsCart();
@@ -52,12 +52,15 @@ export class Cart {
     showCartItem(product) {
         this.cartEmpty.classList.add("not-visible");
         this.cartFull.classList.remove("not-visible");
+        this.cartFull.classList.add("show_cart");
+       
     }
 
     hiddeCartItem(DisabledButtons = false) {
 
         if (this.cart.length < 1) {
             this.cartEmpty.classList.remove("not-visible");
+            this.cartEmpty.classList.add("show_cart");
             this.cartFull.classList.add("not-visible");
         }
         if (DisabledButtons) {
@@ -111,13 +114,26 @@ export class Cart {
     }
 
 
-    deleteCartElement(id) {
+    deleteCartElement(id, verify) {
         let producDelete = "";
         this.cart.forEach((item, index) => {
             if (id == item.id) {
+                if (verify) {
+                    let elementProduct = document.querySelector(".products").querySelector(`[data-id="${id}"]`);
+                    console.log(elementProduct);
+                    elementProduct.classList.remove("product__btn--update-1");
+                    elementProduct.querySelector(".product__increment").classList.add("not-visible");
+                    elementProduct.querySelector(".product__decrement").classList.add("not-visible");
+                    elementProduct.querySelector(".product_add").innerHTML = "Add to Cart";
+                    elementProduct.parentElement.querySelector("picture img").classList.remove("product__picture-selected");
+                }
                 this.cart.splice(index, 1);
                 producDelete = this.cartFullItems.querySelector(`[data-id="${id}"]`);
-                producDelete.remove();
+                producDelete.classList.add("delete_element");
+                setTimeout(() => { producDelete.remove(); }, 400);
+                if (!this.cart.length > 0) {
+                    this.hiddeCartItem();
+                }
             }
         });
         this.updateNumberProductsCart();
@@ -128,6 +144,7 @@ export class Cart {
         let producDelete = "";
         this.cart.forEach((item, index) => {
             if (id == item.id) {
+                elementProduct.parentElement.querySelector("picture img").classList.remove("product__picture-selected");
                 producDelete = this.cartFullItems.querySelector(`[data-id="${id}"]`);
                 producDelete.remove();
             }
@@ -135,6 +152,10 @@ export class Cart {
         this.updateNumberProductsCart();
         this.updateTotalProductsCart();
     }
+
+
+
+
 
     confirmOrder() {
         this.modal.classList.remove("not-visible");

@@ -131,8 +131,32 @@ body{
     padding: var(--spacing-300);
     margin:0 auto;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
+
+/* ANIMATIONS */
+@keyframes addElementCart{
+    0%{
+        transform:translate(1000px);
+        
+    }
+    100%{
+        transform:translate(0px);
+    }
+}
+@keyframes cartShow{
+    0%{
+        transform: scale(0);
+        
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.delete_element {transform: translateX(1000px);transition: transform 0.4s ease;}
+.show_cart {animation:cartShow 0.4s ease;}
 
 .products {margin-top: var(--spacing-400);}
 .product {margin-bottom: var(--spacing-300);}
@@ -158,18 +182,15 @@ body{
 .product .product__incrementdecrement:hover {background-color: white;cursor: pointer;transition: all 0.4s ease;}
 .product .product__incrementdecrement:hover svg path {fill:var(--red);}
 
-.cart {padding: var(--spacing-300);background-color: var(--white);border-radius: var(--spacing-150);margin-top: var(--spacing-300);}
+.cart {padding: var(--spacing-300);background-color: var(--white);border-radius: var(--spacing-150);margin-top: var(--spacing-300);animation: cartShow 0.4s ease;}
 .cart .cart__title {color: var(--red);padding-bottom: var(--spacing-300);}
 .cart .cart__content--empty {display: flex;align-items: center;justify-content: center;flex-direction: column;gap: var(--spacing-200);}
 .cart .cart__content--empty img {width: 12.8rem;height: 12.8rem;}
 .cart .cart__content--empty .cart_content--empty--title {color: var(--rose-500);}
 
+
 .cart .cart_full .cart__items {padding-top: var(--spacing-300);padding-bottom: var(--spacing-300);}
-
 .cart .cart_full .cart__items .cart__item > li:first-child {padding-top: 0px;}
-
-
-
 .cart .cart_full .cart__items .cart__item .cart__item-_title {color: var(--rose-900);}
 .cart .cart_full .cart__items .cart__item {padding-top: var(--spacing-200);}
 .cart .cart_full .cart__items .cart__item {position: relative;display: flex;flex-direction: column;justify-content: center;border-bottom: 1px solid var(--rose-100);padding-bottom: var(--spacing-200);}
