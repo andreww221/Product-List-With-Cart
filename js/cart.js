@@ -166,11 +166,14 @@ export class Cart {
             let itemPriceConvert = itemPrice.replace("$", '');
             let totalItemUpdate = (itemAmountConvert * itemPriceConvert).toFixed(2);
             totalCart += Number(totalItemUpdate);
+            let urlCompleta = item.urlPicture.split("-");
+            urlCompleta[urlCompleta.length-1] = "thumbnail.jpg";
+            let urlNueva = urlCompleta.join("-");
             let elementCartConfirmHTML = `<li class="modal__content-item">
                         <ul>
                             <li class="modal__content-item-detail">
                                 <div class="modal__content-image">
-                                    <img src="assets/images/image-tiramisu-thumbnail.jpg" alt="Classic Tiramisu">
+                                    <img src="${urlNueva}" alt="Classic Tiramisu">
                                 </div>
                                 <div class="modal__content-details">
                                     <h3 class="modal__content-details-title text-preset-4-bold">${item.name}</h3>
