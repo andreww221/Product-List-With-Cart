@@ -144,7 +144,6 @@ export class Cart {
         let producDelete = "";
         this.cart.forEach((item, index) => {
             if (id == item.id) {
-                elementProduct.parentElement.querySelector("picture img").classList.remove("product__picture-selected");
                 producDelete = this.cartFullItems.querySelector(`[data-id="${id}"]`);
                 producDelete.remove();
             }
