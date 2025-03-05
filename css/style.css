@@ -131,7 +131,7 @@ body{
     padding: var(--spacing-300);
     margin:0 auto;
     box-sizing: border-box;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 
@@ -183,6 +183,10 @@ body{
 .product .product__incrementdecrement:hover {background-color: white;cursor: pointer;transition: all 0.4s ease;}
 .product .product__incrementdecrement:hover svg path {fill:var(--red);}
 
+
+
+.container_cart{height: 100%;}
+.cart {position: sticky;top:0px;}
 .cart {padding: var(--spacing-300);background-color: var(--white);border-radius: var(--spacing-150);margin-top: var(--spacing-300);}
 .cart .cart__title {color: var(--red);padding-bottom: var(--spacing-300);}
 .cart .cart__content--empty {display: flex;align-items: center;justify-content: center;flex-direction: column;gap: var(--spacing-200);}
